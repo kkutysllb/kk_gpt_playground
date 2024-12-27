@@ -32,7 +32,7 @@ class kk_GPT:
     def get_complations(self,
                         messages,
                         model,
-                        max_tokes=200,
+                        max_tokens=200,
                         temperature=0.0,
                         stream=False,
                         ):
@@ -56,7 +56,7 @@ class kk_GPT:
             response = self.client.chat.completions.create(
                 model=model,
                 messages=messages,
-                max_tokens=max_tokes,
+                max_tokens=max_tokens,
                 temperature=temperature,
                 stream=stream,
             )

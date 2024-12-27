@@ -10,10 +10,7 @@
 """
 import os
 from dotenv import load_dotenv, find_dotenv
-import logging
 
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
-logger = logging.getLogger(__name__)
 
 load_dotenv(find_dotenv())
 
@@ -21,7 +18,18 @@ API_KEY = os.getenv("OPENAI_API_KEY")
 BASE_URL = os.getenv("OPENAI_API_BASE")
 
 
+MODELS = [
+    'qwen2.5-32b-agi',
+    'gpt-4o-mini',
+    'glm-4-plus'
+]
 
+DEFAULT_MODEL = MODELS[0]
+MODEL_TO_MAX_TOKENS = {
+    'qwen2.5-32b-agi': 4096,
+    'gpt-4o-mini': 8192,
+    'glm-4-plus': 8192
+}
 
 
 if __name__ == "__main__":
